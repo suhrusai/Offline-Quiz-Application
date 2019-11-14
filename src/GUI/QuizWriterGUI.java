@@ -326,6 +326,9 @@ public class QuizWriterGUI implements ActionListener {
 		else if(a.getSource()==submit) {
 			//this.quizwriter(exam.getText());
 			while(true) {
+				if(studentdat.getText().trim().equals("") || exam.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(settingup, "Empty Fields detected","Error", JOptionPane.ERROR_MESSAGE);
+				}
 				try{
 					System.out.println(this.studentdat.getText());
 					this.timeremaining=60*Integer.parseInt(time.getText());

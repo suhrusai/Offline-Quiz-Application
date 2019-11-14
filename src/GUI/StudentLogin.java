@@ -16,6 +16,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -97,6 +98,8 @@ public class StudentLogin implements ActionListener{
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}catch(ArrayIndexOutOfBoundsException e1) {
+					
 				}
 
 			return null;
@@ -112,6 +115,7 @@ public class StudentLogin implements ActionListener{
 				quiz.quizwriter(this.examname,this.username.getText(),user);
 				this.login.setVisible(false);
 			}
+				JOptionPane.showMessageDialog(quiz.settingup, "Wrong Credentials","Error",  JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }
